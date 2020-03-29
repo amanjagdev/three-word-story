@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+    box-sizing: border-box; 
+ }
+ 
+ body {
+     font-family: "arial", "helvectia", "courier";
+ }
+ 
+ .main-header{
+     background-color: #80aaff;
+     color: white;
+     padding: 50px;  
+ }
+ 
+ .wrapper{
+     min-height: calc(100vh - 58.4px);
+ }
+ 
+ .main-content {
+     width: 65%;
+     max-width: 800px;
+     margin: 0 auto;
+ }
+ 
+ .name1, .name2 {
+     text-align: center;
+     text-transform: capitalize;
+     line-height: 1.5em;
+     letter-spacing: 2px;
+     margin-top: 0;
+     margin-bottom: 0;
+ }
+ 
+ .name1 {
+     font-size: 2.5em;
+ 
+ }   
+ 
+ .name2 {
+     font-size: 1.5em;
+ }
+ 
+ .content-headers {
+     text-align: center;
+     margin-top: 50px;
+     font-size: 2em;
+ }
+ 
+ .border {
+     border: solid 3px #80aaff;
+     border-radius: 20px;  
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+           
+ }
+ 
+ p {
+     font-size: 1.2em;   
+     padding-left: 20px;
+     padding-right: 20px;
+     text-align: left;
+ }
+ 
+ a {
+     font-weight: bold;
+     font-size: 1.3em;
+ }
+ 
+ a:link {
+     text-decoration: none;
+     color: #0055ff;
+ }
+ 
+ a:visited {
+     color: #002b80;
+ }
+ 
+ a:hover {
+     color: #99bbff;
+ }
+ 
+ a:active {
+     color: #0055ff;
+ }
+ 
+ /*
+ button {
+     float: right;
+     font-weight: bold;
+     font-family: "arial", "helvectia", "courier";
+     padding: 15px;
+     margin-top: 10px;   
+     margin-right: 10px;
+     background-color:#80aaff;
+     border: none;
+     color: white;
+     padding: 16px 32px;
+     text-align: center;
+     font-size: 1.2em;
+     margin: 4px 2px;
+     opacity: 0.6;
+     transition: 0.3s;
+     text-decoration: none;
+     cursor: pointer;
+     border-radius: 20px;
+ }
+ 
+ button:hover {
+     opacity: 1;
+ }
+ */
+ 
+ .clearfix::after{
+     content: "";
+     display: table;
+     clear:both;
+ }
+ 
+ .col1 {
+     text-align: center;
+     float: left;
+     width: 50%;
+ }
+ 
+ .col2 {
+     text-align: center;
+     float: right; 
+     width: 50%;  
+ }
+ 
+ .main-footer {  
+     background-color: #80aaff;
+     color: white;
+     padding: 20px;
+     text-align: center;
+ }
+ 
