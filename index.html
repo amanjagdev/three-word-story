@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Three Word Story</title>
-        <link rel="stylesheet" type="text/css" href="./assets/css/normalise.css">
-        <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    </head>
-    <body>
-        <div class="wrapper">
+
+<head>
+    <title>Three Word Story</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/normalise.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
         <header class="main-header">
             <h1 class="name1">Three Word Story</h1>
             <h2 class="name2">The worldwide collaboration</h2>
         </header>
-            <div class="main-content clearfix">
-                <h2 class="content-headers">How does it work?</h2>
-                <div class="border">
+        <div class="main-content clearfix">
+            <h2 class="content-headers">How does it work?</h2>
+            <div class="border">
                 <p>The idea is to build a story that everyone collaborates to and
-                it's based on the popular internet forum game <a href="https://colorfolk.fandom.com/wiki/Three_Word_Story">Three Word Story</a>.
-                <p>Once you have entered your three words you have done your bit in contributing to the story!</p>
-                <p>When the story is finished it will either end up hilarious or unreadable, that's the fun part!</p>
-                <p>There is a live preview button in the top corner of the page, so you can keep up with how the story is unfolding so far.</p>
-                </div>
-                <h2 class="content-headers">Sound good? Ok let's get started:</h2>
-
-                <!-- This is where the user enters their three words, display a snazzy input area with 3 boxes then a submit button-->
-                <div class="col1"><h3>Input Content</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, pariatur? Illum, voluptas! Blanditiis repellendus magnam veritatis? Eum voluptatem magnam necessitatibus.</p>
-                </div>
-                <div class="col2"><h3>Story Preview</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi possimus non adipisci unde, tempora facilis quidem exercitationem esse quisquam harum.</p>
-                </div>
-
+                    it's based on the popular internet forum game <a
+                        href="https://colorfolk.fandom.com/wiki/Three_Word_Story">Three Word Story</a>.
+                    <p>Once you have entered your three words you have done your bit in contributing to the story!</p>
+                    <p>When the story is finished it will either end up hilarious or unreadable, that's the fun part!
+                    </p>
+                    <p>There is a live preview button in the top corner of the page, so you can keep up with how the
+                        story is unfolding so far.</p>
             </div>
-        </div>
-        <footer class="main-footer">
-            <span>&copy; 2020 blah blah</span>
-        </footer>
+            <h2 class="content-headers">Sound good? Ok let's get started:</h2>
 
-        <script src="./assets/js/index.js"></script>
-    </body>
+            <!-- This is where the user enters their three words, display a snazzy input area with 3 boxes then a submit button-->
+            <div class="col1">
+                <h3>Input Content</h3>
+                <input type="text" id="input-story"></input>
+                <button onclick="updateStory()">Submit</button>
+            </div>
+            <div class="col2">
+                <h3>Story Preview</h3>
+                <p id="story-here"></p>
+            </div>
+
+        </div>
+    </div>
+    <footer class="main-footer">
+        <span>&copy; 2020 blah blah</span>
+    </footer>
+
+    <script src="./assets/js/index.js"></script>
+</body>
+
 </html>

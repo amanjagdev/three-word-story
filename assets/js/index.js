@@ -1,16 +1,46 @@
 const keys = {
-  jsonSecret: "$2b$10$hj6ZWnFYmkxR3FDaigl1kOa5T7sNUFwp7MOrt859gf9Mag8o817C6"
+  jsonSecret: "<YOUR_SECRET_KEY_HERE>"
 }
 
+let story;
+let storyHtml = document.querySelector("#story-here");
+let inputStory;
+
+//Requesting to the jsonbin
 let req = new XMLHttpRequest();
+
+req.open("GET", "<YOUR_BIN_API_ID_HERE>", true);
+req.setRequestHeader("secret-key",keys.jsonSecret);
+req.send();
 
 req.onreadystatechange = () => {
   if (req.readyState == XMLHttpRequest.DONE) {
-    console.log(req.responseText);
+    story = JSON.parse(req.responseText);
+    console.log(story.content);
+    storyHtml.innerHTML= story.content
   }
 };
 
-req.open("GET", "https://api.jsonbin.io/b/5e800982862c46101abff5ca", true);
-req.setRequestHeader("secret-key", );
+const updateStory = () => {
+  inputStory = document.querySelector("#input-story").value;
+  inputStory = story.content +" "+ inputStory;
 
-req.send();
+  const reqToBeSend = {
+    "type" : "story",
+    "content" : inputStory
+  }
+  console.log(reqToBeSend)
+  let req2 = new XMLHttpRequest();
+
+  req2.onreadystatechange = () => {
+    if (req2.readyState == XMLHttpRequest.DONE) {
+      console.log(req2.responseText);
+    }
+  };
+
+  req2.open("PUT", "<YOUR_BIN_API_ID_HERE>", true);
+  req2.setRequestHeader("Content-Type", "application/json");
+  req2.setRequestHeader("versioning", false);
+  req2.setRequestHeader("secret-key",keys.jsonSecret);
+  req2.send(JSON.stringify(reqToBeSend));
+}
