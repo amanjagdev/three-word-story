@@ -1,5 +1,6 @@
 const keys = {
-  jsonSecret: "<YOUR_SECRET_KEY_HERE>"
+  jsonSecret: "<YOUR_SECRET_KEY_HERE>",
+  binApi: "<YOUR_BIN_API_ID_HERE>"
 }
 
 let story;
@@ -9,7 +10,7 @@ let inputStory;
 //Requesting to the jsonbin
 let req = new XMLHttpRequest();
 
-req.open("GET", "<YOUR_BIN_API_ID_HERE>", true);
+req.open("GET", keys.binApi, true);
 req.setRequestHeader("secret-key",keys.jsonSecret);
 req.send();
 
@@ -38,7 +39,7 @@ const updateStory = () => {
     }
   };
 
-  req2.open("PUT", "<YOUR_BIN_API_ID_HERE>", true);
+  req2.open("PUT", keys.binApi, true);
   req2.setRequestHeader("Content-Type", "application/json");
   req2.setRequestHeader("versioning", false);
   req2.setRequestHeader("secret-key",keys.jsonSecret);
