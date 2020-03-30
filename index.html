@@ -5,11 +5,13 @@
     <title>Three Word Story</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/normalise.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <div class="wrapper">
-        <header class="main-header">
+        <header class="main-header clearfix">
+            <img src="./assets/images/earth-globe-planet.svg" alt="Earth Globe" class="globe" />
             <h1 class="name1">Three Word Story</h1>
             <h2 class="name2">The worldwide collaboration</h2>
         </header>
@@ -29,9 +31,13 @@
 
             <!-- This is where the user enters their three words, display a snazzy input area with 3 boxes then a submit button-->
             <div class="col1">
-                <h3>Input Content</h3>
-                <input type="text" id="input-story"></input>
-                <button onclick="updateStory()">Submit</button>
+                <h3>Enter Three Words</h3>
+                <ol>
+                <li><input class="text-box" type="text" id="input-story-one" maxlength="15" /></input></li>
+                <li><input class="text-box" type="text" id="input-story-two" maxlength="15" /></input></li>
+                <li><input class="text-box" type="text" id="input-story-three" maxlength="15" /></input></li>
+                </ol>
+                <button class="submit-button" onclick="updateStory()">Submit</button>
             </div>
             <div class="col2">
                 <h3>Story Preview</h3>
