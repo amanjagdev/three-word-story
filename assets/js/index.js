@@ -63,4 +63,20 @@ const updateStory = () => {
 };
 
 
+//For Reseting the story
+const resetStory = () => {
+  const reqToBeSendForReset = {
+    type: "story",
+    content: "Story : "
+  };
+  //POST request to update data
+  let reqReset = new XMLHttpRequest();
+  reqReset.open("PUT", keys.binApi, true);
+  reqReset.setRequestHeader("Content-Type", "application/json");
+  reqReset.setRequestHeader("versioning", false);
+  reqReset.setRequestHeader("secret-key", keys.jsonSecret);
+  reqReset.send(JSON.stringify(reqToBeSendForReset));
 
+  story.content = "Story : ";
+  storyHtml.innerHTML = story.content;
+};
