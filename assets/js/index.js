@@ -15,13 +15,13 @@ let inputStoryThree;
 let req = new XMLHttpRequest();
 
 req.open("GET", keys.binApi, true);
-req.setRequestHeader("secret-key", keys.jsonSecret);
+req.setRequestHeader("X-Access-Key", keys.jsonSecret);
 req.send();
 
 req.onreadystatechange = () => {
   if (req.readyState == XMLHttpRequest.DONE) {
     story = JSON.parse(req.responseText);
-    storyHtml.innerHTML = story.content;
+    storyHtml.innerHTML = story.record.content;
   }
 };
 
@@ -31,7 +31,7 @@ const updateStory = () => {
   inputStoryTwo = document.querySelector("#input-story-two").value;
   inputStoryThree = document.querySelector("#input-story-three").value;
   inputStory =
-    story.content +
+    story.record.content +
     " " +
     inputStoryOne +
     " " +
@@ -54,12 +54,12 @@ const updateStory = () => {
   req2.open("PUT", keys.binApi, true);
   req2.setRequestHeader("Content-Type", "application/json");
   req2.setRequestHeader("versioning", false);
-  req2.setRequestHeader("secret-key", keys.jsonSecret);
+  req2.setRequestHeader("X-Access-Key", keys.jsonSecret);
   req2.send(JSON.stringify(reqToBeSend));
 
   //Updating Live content
-  story.content = inputStory;
-  storyHtml.innerHTML = story.content;
+  story.record.content = inputStory;
+  storyHtml.innerHTML = story.record.content;
 };
 
 
@@ -74,9 +74,9 @@ const resetStory = () => {
   reqReset.open("PUT", keys.binApi, true);
   reqReset.setRequestHeader("Content-Type", "application/json");
   reqReset.setRequestHeader("versioning", false);
-  reqReset.setRequestHeader("secret-key", keys.jsonSecret);
+  reqReset.setRequestHeader("X-Access-Key", keys.jsonSecret);
   reqReset.send(JSON.stringify(reqToBeSendForReset));
 
-  story.content = "Story : ";
-  storyHtml.innerHTML = story.content;
+  story.record.content = "Story : ";
+  storyHtml.innerHTML = story.record.content;
 };
